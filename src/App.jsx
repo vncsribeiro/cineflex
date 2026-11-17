@@ -2,28 +2,22 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import Header from './assets/components/Header'
 import GlobalStyle from './styles/globalStyles'
+import Movies from './assets/components/Movies'
 
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <MobileContainer>
-        <Header />
         <BrowserRouter>
+          <Header />
           <Routes>
-            <Route path='/' />
+            <Route path='/' element={<Movies />}/>
           </Routes>
         </BrowserRouter>
-      </MobileContainer>
     </>
-
   )
 }
 
 export default App
 
-const MobileContainer = styled.div`
-  width: 100%;
-  max-width: 375px;
-`
