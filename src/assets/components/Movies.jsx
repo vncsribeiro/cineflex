@@ -58,15 +58,16 @@ const List = styled.ul`
     
     li {
         display: flex;
-         justify-content: center;
+        justify-content: center;
         align-items: center;
         width: 145px;
         height: 209px;
-        opacity: 1;
+        opacity: 0.95;
         border-radius: 3px;
         background-color: #FFFFFF;
         box-shadow: 0px 2px 4px 2px #0000001A;
         margin: 6px 12px;
+        cursor: pointer;
     }
 
 `
