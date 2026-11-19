@@ -51,6 +51,10 @@ body {
     font-family: 'Roboto', sans-serif;
 	background-color: white;
 }
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
 `
 
 export default GlobalStyle

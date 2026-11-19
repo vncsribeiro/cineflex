@@ -2,13 +2,14 @@ import styled from "styled-components";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Showtime from "./Showtime";
 
 export default function Sessions() {
     const URL = 'https://mock-api.driven.com.br/api/v7/cineflex/movies';
     const { idFilme } = useParams();
     const [session, setSession] = useState([]);
     const [poster, setPoster] = useState([]);
-    console.log(poster)
+    
 
     useEffect(() => {
         const promise = axios.get(`${URL}/${idFilme}/showtimes`);
@@ -33,7 +34,7 @@ export default function Sessions() {
                     <Container>
                         {value.showtimes.map((time) => (
 
-                            <Hours key={time.id}>{time.name}</Hours>
+                            <Hours key={time.id}> <Showtime time={time.name} idSession={time.id}/> </Hours>
 
                         ))}
                     </Container>
@@ -41,9 +42,11 @@ export default function Sessions() {
             ))}
 
             <Poster>
-                
-                <div><img src={poster.posterURL} /></div>
-                
+
+                <div>
+                    <img src={poster.posterURL} />
+                </div>
+
                 <p>{poster.title}</p>
             </Poster>
 

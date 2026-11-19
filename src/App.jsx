@@ -3,6 +3,7 @@ import Header from './assets/components/Header'
 import GlobalStyle from './styles/globalStyles'
 import Movies from './assets/components/Movies'
 import Sessions from './assets/components/Sessions'
+import Seats from './assets/components/Seats'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Movies />}/>
             <Route path='/sessoes/:idFilme' element={<Sessions />}/>
+            <Route path='/assentos/:idSession' element={<Seats />}/>
           </Routes>
         </BrowserRouter>
     </>
